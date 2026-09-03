@@ -1,0 +1,325 @@
+.trust {
+  border-bottom: 1px solid var(--border);
+  background: var(--background-soft);
+}
+
+.inner {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--page-padding) * 2))
+  );
+
+  margin: 0 auto;
+
+  padding: 110px 0;
+}
+
+/* --------------------------------
+   HEADER
+-------------------------------- */
+
+.header {
+  padding-bottom: 70px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.headerContent {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(280px, 0.5fr);
+
+  gap: 80px;
+
+  align-items: end;
+}
+
+.headerContent h2 {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(46px, 5.5vw, 78px);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.headerContent h2 span {
+  color: var(--gold);
+}
+
+.headerContent p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+/* --------------------------------
+   INDUSTRIES
+-------------------------------- */
+
+.industrySection {
+  padding: 65px 0 0;
+}
+
+.label {
+  margin: 0 0 25px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.industryGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.industry {
+  min-height: 82px;
+
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    padding-left 200ms ease;
+}
+
+.industry:hover {
+  color: var(--text-primary);
+
+  background: rgba(
+    216,
+    173,
+    79,
+    0.035
+  );
+
+  padding-left: 31px;
+}
+
+.mark {
+  color: var(--gold);
+
+  font-size: 16px;
+}
+
+/* --------------------------------
+   FUTURE
+-------------------------------- */
+
+.future {
+  padding-top: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.futureLabel {
+  margin: 0 0 10px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.futureText {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.link {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 28px;
+
+  color: var(--text-primary);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--gold-dark);
+
+  transition:
+    color 200ms ease,
+    gap 200ms ease;
+}
+
+.link span:last-child {
+  color: var(--gold);
+
+  font-size: 17px;
+}
+
+.link:hover {
+  color: var(--gold);
+
+  gap: 34px;
+}
+
+/* --------------------------------
+   TABLET
+-------------------------------- */
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 90px 0;
+  }
+
+  .headerContent {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .industryGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .future {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+}
+
+/* --------------------------------
+   MOBILE
+-------------------------------- */
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 75px 0;
+  }
+
+  .header {
+    padding-bottom: 55px;
+  }
+
+  .headerContent h2 {
+    font-size: clamp(
+      40px,
+      11vw,
+      56px
+    );
+  }
+
+  .headerContent p {
+    font-size: 14px;
+  }
+
+  .industrySection {
+    padding-top: 50px;
+  }
+
+  .industryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry {
+    min-height: 68px;
+
+    padding: 0 20px;
+  }
+
+  .industry:hover {
+    padding-left: 25px;
+  }
+
+  .future {
+    padding-top: 50px;
+  }
+
+  .futureText {
+    font-size: 14px;
+  }
+
+  .link {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+/* --------------------------------
+   REDUCED MOTION
+-------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .industry,
+  .link {
+    transition: none;
+  }
+}
