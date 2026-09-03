@@ -1,0 +1,280 @@
+.services {
+  border-bottom: 1px solid var(--border);
+  background: var(--background-soft);
+}
+
+.inner {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--page-padding) * 2))
+  );
+
+  margin: 0 auto;
+  padding: 130px 0;
+}
+
+/* =========================================
+   INTRODUCTION
+   ========================================= */
+
+.introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 80px;
+
+  align-items: end;
+
+  padding-bottom: 80px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.introduction h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.introduction h2 span {
+  color: var(--gold);
+}
+
+.introText {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SERVICES GRID
+   ========================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* =========================================
+   SERVICE CARD
+   ========================================= */
+
+.service {
+  position: relative;
+
+  min-height: 250px;
+  padding: 34px;
+
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  gap: 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  transition:
+    background 220ms ease,
+    padding 220ms ease;
+}
+
+/* Vertical line between the two desktop columns */
+
+.service:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+/* Hover effect */
+
+.service:hover {
+  background: rgba(216, 173, 79, 0.035);
+  padding-left: 40px;
+}
+
+/* =========================================
+   SERVICE TITLE
+   ========================================= */
+
+.service h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-display);
+  font-size: clamp(25px, 2.2vw, 34px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* =========================================
+   SERVICE DESCRIPTION
+   ========================================= */
+
+.service p {
+  max-width: 460px;
+
+  margin: 20px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ARROW
+   ========================================= */
+
+.arrow {
+  align-self: start;
+
+  color: var(--gold);
+
+  font-size: 18px;
+
+  transition: transform 220ms ease;
+}
+
+.service:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   VIEW ALL SERVICES
+   ========================================= */
+
+.viewAll {
+  width: fit-content;
+
+  margin-top: 45px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+
+  color: var(--text-primary);
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  border-bottom: 1px solid var(--gold-dark);
+
+  padding-bottom: 8px;
+}
+
+.viewAll span:last-child {
+  color: var(--gold);
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 100px 0;
+  }
+
+  .introduction {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding-bottom: 60px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Remove desktop vertical divider */
+
+  .service:nth-child(odd) {
+    border-right: none;
+  }
+
+  .service {
+    min-height: 220px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 80px 0;
+  }
+
+  .introduction h2 {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .introText {
+    font-size: 15px;
+  }
+
+  /*
+    Important:
+    There are now only TWO columns:
+    
+    1. Service content
+    2. Arrow
+
+    There is NO number column.
+  */
+
+  .service {
+    min-height: auto;
+
+    padding: 28px 20px;
+
+    grid-template-columns: 1fr 20px;
+
+    gap: 12px;
+  }
+
+  .service:hover {
+    padding-left: 24px;
+  }
+
+  .service h3 {
+    font-size: 27px;
+  }
+
+  .service p {
+    margin-top: 14px;
+
+    font-size: 14px;
+  }
+
+  .arrow {
+    font-size: 16px;
+  }
+
+  .viewAll {
+    margin-top: 35px;
+  }
+}

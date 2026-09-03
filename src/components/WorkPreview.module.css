@@ -1,0 +1,345 @@
+.work {
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.inner {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--page-padding) * 2))
+  );
+
+  margin: 0 auto;
+  padding: 130px 0;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(280px, 0.6fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  padding-bottom: 80px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.header h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(48px, 6vw, 88px);
+
+  font-weight: 500;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.04em;
+}
+
+.header h2 span {
+  color: var(--gold);
+}
+
+.introText {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   PROJECT GRID
+   ========================================= */
+
+.projects {
+  display: grid;
+
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+}
+
+/* =========================================
+   PROJECT CARD
+   ========================================= */
+
+.project {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 34px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-bottom: 1px solid var(--border);
+
+  transition:
+    background 220ms ease,
+    padding 220ms ease;
+}
+
+/* Vertical divider */
+
+.project:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+/* Hover */
+
+.project:hover {
+  background: rgba(216, 173, 79, 0.035);
+
+  padding-left: 40px;
+}
+
+/* =========================================
+   PROJECT TOP
+   ========================================= */
+
+.projectTop {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.category {
+  color: var(--gold);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.arrow {
+  color: var(--gold);
+
+  font-size: 18px;
+
+  transition: transform 220ms ease;
+}
+
+.project:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   PROJECT CONTENT
+   ========================================= */
+
+.projectContent {
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+.projectContent h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    40px,
+    5vw,
+    68px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+}
+
+.projectContent p {
+  max-width: 430px;
+
+  margin: 24px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   PROJECT FOOTER
+   ========================================= */
+
+.projectFooter {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+.projectFooter span:last-child {
+  color: var(--gold);
+}
+
+/* =========================================
+   VIEW ALL
+   ========================================= */
+
+.viewAll {
+  width: fit-content;
+
+  margin-top: 45px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  color: var(--text-primary);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  border-bottom: 1px solid var(--gold-dark);
+
+  padding-bottom: 8px;
+}
+
+.viewAll span:last-child {
+  color: var(--gold);
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 100px 0;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding-bottom: 60px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project:nth-child(odd) {
+    border-right: none;
+  }
+
+  .project {
+    min-height: 340px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 80px 0;
+  }
+
+  .header h2 {
+    font-size: clamp(
+      42px,
+      12vw,
+      62px
+    );
+  }
+
+  .introText {
+    font-size: 15px;
+  }
+
+  .project {
+    min-height: 330px;
+
+    padding: 28px 20px;
+  }
+
+  .project:hover {
+    padding-left: 24px;
+  }
+
+  .projectContent {
+    margin-bottom: 40px;
+  }
+
+  .projectContent h3 {
+    font-size: 48px;
+  }
+
+  .projectContent p {
+    margin-top: 18px;
+
+    font-size: 14px;
+  }
+
+  .viewAll {
+    margin-top: 35px;
+  }
+}
